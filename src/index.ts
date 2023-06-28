@@ -1,12 +1,6 @@
 import axios, { AxiosInstance } from "axios";
 import { URLSearchParams } from "url";
-export interface IGetToken {
-  access_token: string;
-  token_type: string;
-  expires_in: number;
-  refresh_token: string;
-  scope: string;
-}
+import { GuildedUser, IGetToken } from "./types";
 
 export class Cardboard {
   private _baseurl: string;
@@ -14,9 +8,12 @@ export class Cardboard {
   protected client_id: string;
   protected client_secret: string;
 
-  constructor(client_id: string, client_secret: string) {
+  constructor(client_id: string, client_secret: string, local = false) {
     // this is the base url of the carboard api
     this._baseurl = "https://cardboard.ink/api/v1/";
+    if (local) {
+      this._baseurl = "http://localhost:5173/api/v1/";
+    }
     this._axios = axios.create({ baseURL: this._baseurl });
     this.client_id = client_id;
     this.client_secret = client_secret;
@@ -74,7 +71,7 @@ export class Cardboard {
     return response.data;
   }
 
-  public async getUserInfo(access_token: string): Promise<any> {
+  public async getUserInfo(access_token: string): Promise<GuildedUser> {
     const response = await this._axios.get("users/@me", {
       headers: { authorization: `Bearer ${access_token}` },
     });
