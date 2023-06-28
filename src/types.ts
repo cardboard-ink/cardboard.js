@@ -9,13 +9,13 @@ export interface IGetToken {
 export interface GuildedUser {
   id: string
   name: string
-  subdomain: string
-  aliases: Alias[]
-  avatar: string
-  banner: string
-  userStatus: UserStatus
+  subdomain?: string
+  aliases?: Alias[]
+  avatar?: string
+  banner?: string
+  userStatus?: UserStatus
   moderationStatus: any
-  aboutInfo: AboutInfo
+  aboutInfo?: AboutInfo
   userTransientStatus: any
 }
 
@@ -34,9 +34,9 @@ export interface Alias {
 }
 
 export interface UserStatus {
-  content: Content
-  customReactionId: number
-  customReaction: CustomReaction
+  content?: Content
+  customReactionId?: number
+  customReaction?: CustomReaction
 }
 
 export interface Content {
@@ -82,6 +82,6 @@ export interface CustomReaction {
 }
 
 export interface AboutInfo {
-  bio: string
-  tagLine: string
+  bio?: string
+  tagLine?: string
 }
