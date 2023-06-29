@@ -1,7 +1,8 @@
 import axios, { AxiosInstance } from "axios";
 import { URLSearchParams } from "url";
-import { GuildedUser, IGetToken } from "./types";
+import { GuildedUser, IGetToken, Alias, UserStatus, Content, Document, CustomReaction, AboutInfo } from "./types";
 
+export { GuildedUser, IGetToken, Alias, UserStatus, Content, Document, CustomReaction, AboutInfo };
 export class Cardboard {
   private _baseurl: string;
   private _axios: AxiosInstance;
