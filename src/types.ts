@@ -167,11 +167,24 @@ export interface UserStatus {
   customReaction?: CustomReaction
 }
 
+/**
+ * @typedef {Object} Content
+ * @property {string} object
+ * @property {Document} document
+ * Slate helper object for easy navigation
+ */
 export interface Content {
   object: string
   document: Document
 }
 
+/**
+ * @typedef {Object} Document
+ * @property {Data} data
+ * @property {Node[]} nodes
+ * @property {string} object
+ * Slate helper object for easy navigation
+ */
 export interface Document {
   data: Data
   nodes: Node[]
@@ -180,6 +193,14 @@ export interface Document {
 
 export interface Data {}
 
+/**
+ * @typedef {Object} Node
+ * @property {Data2} data
+ * @property {string} type
+ * @property {Node2[]} nodes
+ * @property {string} object
+ * Slate helper object for easy navigation
+ */
 export interface Node {
   data: Data2
   type: string
@@ -189,11 +210,24 @@ export interface Node {
 
 export interface Data2 {}
 
+/**
+ * @typedef {Object} Node2
+ * @property {Lefe[]} leaves
+ * @property {string} object
+ * Slate helper object for easy navigation
+ */
 export interface Node2 {
   leaves: Lefe[]
   object: string
 }
 
+/**
+ * @typedef {Object} Lefe
+ * @property {string} text
+ * @property {any[]} marks
+ * @property {string} object
+ * Slate helper object for easy navigation
+ */
 export interface Lefe {
   text: string
   marks: any[]
