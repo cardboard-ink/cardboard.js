@@ -56,7 +56,7 @@ export class Cardboard {
         grant_type,
       })
     );
-    return response.data;
+    return response.data as IGetToken;
   }
 
   /**
@@ -74,7 +74,7 @@ export class Cardboard {
         grant_type,
       })
     );
-    return response.data;
+    return response.data as IGetToken;
   }
 
   /**
@@ -139,6 +139,6 @@ export class Cardboard {
     const response = await this._axios.get("users/@me", {
       headers: { authorization: `Bearer ${access_token}` },
     });
-    return response.data;
+    return response.data as GuildedUser;
   }
 }
