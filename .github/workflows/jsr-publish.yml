@@ -14,6 +14,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+
       - name: Publish package
-      - run: npm install
-      - run: npx jsr publish
+        run: npm i && npx jsr publish
