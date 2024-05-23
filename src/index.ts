@@ -144,7 +144,7 @@
 // }
 
 import { URLSearchParams } from "url";
-import { GuildedUser, IGetToken, Alias, UserStatus, Content, Document, CustomReaction, AboutInfo } from "./types";
+import { GuildedUser, IGetToken, Alias, UserStatus, Content, Document, CustomReaction, AboutInfo } from "./cardboard.types";
 
 export { GuildedUser, IGetToken, Alias, UserStatus, Content, Document, CustomReaction, AboutInfo };
 

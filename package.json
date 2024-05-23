@@ -1,13 +1,12 @@
 {
   "name": "cardboard.js",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "JS/TS Wrapper for the CardBoard API",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
     "/dist"
   ],
-  "type": "module",
   "scripts": {
     "build": "npx tsc"
   },

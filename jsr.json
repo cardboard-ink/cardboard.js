@@ -1,5 +1,5 @@
 {
   "name": "@cardboard-ink/cardboard-js",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "exports": "./src/index.ts"
 }
