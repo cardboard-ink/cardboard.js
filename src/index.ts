@@ -1,7 +1,25 @@
 import { URLSearchParams } from "url";
-import { GuildedUser, IGetToken, Alias, UserStatus, Content, Document, CustomReaction, AboutInfo } from "./types";
+import {
+  GuildedUser,
+  IGetToken,
+  Alias,
+  UserStatus,
+  Content,
+  Document,
+  CustomReaction,
+  AboutInfo,
+} from "./types";
 
-export { GuildedUser, IGetToken, Alias, UserStatus, Content, Document, CustomReaction, AboutInfo };
+export {
+  GuildedUser,
+  IGetToken,
+  Alias,
+  UserStatus,
+  Content,
+  Document,
+  CustomReaction,
+  AboutInfo,
+};
 
 /**
  * The main class for the cardboard api
@@ -29,8 +47,8 @@ export class Cardboard {
 
   /**
    * @param code The code recieved from cardboard redirect according to the oauth2 flow
-   * @returns The token object 
-   * 
+   * @returns The token object
+   *
    * ```ts
    * app.get("/login", async (req, res) => {
    *  const code = req.query.code as string
@@ -82,9 +100,9 @@ export class Cardboard {
    * @returns The token object
    * ```ts
    * app.get("/logout", async (req, res) => {
-   *  // remove session on cardboard's end 
+   *  // remove session on cardboard's end
    *  const logout = await cb.revokeToken(at)
-   *  // your logic to remove session in your app 
+   *  // your logic to remove session in your app
    *  at = ""
    *  res.send(logout)
    *  return
@@ -113,7 +131,11 @@ export class Cardboard {
     const response = await fetch(`${this._baseurl}token/check`, {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: new URLSearchParams({ token: access_token }).toString(),
+      body: new URLSearchParams({
+        token: access_token,
+        client_id: this.client_id,
+        client_secret: this.client_secret,
+      }).toString(),
     });
     return response.json();
   }
@@ -140,4 +162,3 @@ export class Cardboard {
     return response.json() as Promise<GuildedUser>;
   }
 }
-
